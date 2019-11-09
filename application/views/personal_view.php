@@ -26,11 +26,36 @@
     </ul>
   </div>
 
+
+
 <?php foreach ($achiv as $achiv): ?>
     <div class="col-lg-3 col-md-4 col-sm-12">
      <?= $achiv->description; ?>
     </div>
    <?php endforeach; ?>
+
+
+
+
+   <canvas></canvas>
+
+
+   <!-- <script type="text/javascript" src="../../MDB/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="http://localhost/balthack/MDB/js/DecoderWorker.js"></script> -->
+   <script type="text/javascript" src="http://localhost/balthack/MDB/js/qrcodelib.js"></script>
+   <script type="text/javascript" src="http://localhost/balthack/MDB/js/webcodecamjquery.js"></script>
+
+   <script type="text/javascript">
+       var arg = {
+           resultFunction: function(result) {
+               $('body').append($('<li>' + result.format + ': ' + result.code + '</li>'));
+           }
+       };
+       $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
+   </script>
+
+
+
 </body>
 </html>
 
