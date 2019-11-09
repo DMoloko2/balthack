@@ -2,13 +2,68 @@
 <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
 <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
 <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-
-function addMarkersToMap(map, lat1, lng1) {
-    var parisMarker = new H.map.Marker({lat: lat1, lng: lng1});
-    map.addObject(parisMarker);
+function addMarkerToGroup(group, coordinate, html) {
+  var marker = new H.map.Marker(coordinate);
+  // add custom data to the marker
+  marker.setData(html);
+  group.addObject(marker);
 }
+
+/**
+ * Add two markers showing the position of Liverpool and Manchester City football clubs.
+ * Clicking on a marker opens an infobubble which holds HTML content related to the marker.
+ * @param  {H.Map} map      A HERE Map instance within the application
+ */
+function addInfoBubble(map) {
+  var group = new H.map.Group();
+
+  map.addObject(group);
+
+
+  <?php foreach ($clubs as $key => $value) { ?>
+    addMarkerToGroup(group, {lat:<?php echo $value->x;?>, lng:<?php echo $value->y;?>},'<?php echo $value->name,'<br>', $value->address,'<br>Рейтинг:', $value->rating;?>');
+  <?php } ?>
+  const format = d3.format('.2f');
+
+  let hoveredObject;
+let infoBubble = new H.ui.InfoBubble({lat: 0, lng: 0}, {});
+infoBubble.addClass('info-bubble');
+infoBubble.close();
+ui.addBubble(infoBubble);
+
+map.addEventListener('pointermove', (e) => {
+    if (hoveredObject && hoveredObject !== e.target) {
+        infoBubble.close();
+    }
+
+    hoveredObject = e.target;
+    //console.log(hoveredObject['data']);
+    if (hoveredObject.icon) {
+        let row = hoveredObject.getData();
+        if (row) {
+
+
+            let pos = map.screenToGeo(
+                e.currentPointer.viewportX,
+                e.currentPointer.viewportY);
+            infoBubble.setPosition(pos);
+            infoBubble.setContent(hoveredObject['data']);
+            infoBubble.open();
+        }
+    }
+});
+}
+
+
+
+
+// function addMarkersToMap(map, lat1, lng1) {
+//     var parisMarker = new H.map.Marker({lat: lat1, lng: lng1});
+//     map.addObject(parisMarker);
+// }
 
 function switchMapLanguage(map, platform){
   // Create default layers
@@ -53,20 +108,13 @@ function switchMapLanguage(map, platform){
 // MapEvents enables the event system
 // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
 var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
+var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
 // Create the default UI components
 switchMapLanguage(map, platform);
 
-
-
-$.ajax({
-url: "/index.php/app/get_info?id_pl="+evt.target.getData()+"&date="+b,
-success: function(e){
-$('.modal').html(e);
- console.log("e");
-
-}
-});
-
+addInfoBubble(map);
 </script>
+<?php
+print_r($clubs);
+?>
 </html>
