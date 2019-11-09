@@ -41,7 +41,7 @@
     			</ul>
 					<ul class="navbar-nav ml-auto nav-flex-icons">
 						<li class="nav-item avatar">
-							<?= $userData; ?>
+							<?= @$userData; ?>
 						</li>
 					</ul>
   			</div>
