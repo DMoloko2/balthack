@@ -25,5 +25,11 @@ class Main_controllers extends CI_Controller {
 		$data['trainers'] = $this->Trainer_model->get_trainers();
 		print_r($data);
 	}
+	public function trainersclub($id)
+	{
+		$this->load->model('Trainer_model');
+		$data['trainers'] = $this->Trainer_model->get_trainer_from_club($id);
+		print_r($data);
+	}
 }
 ?>
