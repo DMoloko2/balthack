@@ -60,6 +60,7 @@ body{
 	top: -40px;
 }
 
+<<<<<<< HEAD
 .rating{
 	margin-top: 80px;
 }
@@ -98,4 +99,8 @@ body{
 	position: relative;
   top: 42px;
   left: 115px;
+=======
+#about_us p span {
+    margin-left: 20px;
+>>>>>>> 3a508d5ef18d116359e51e46941bbae234361227
 }

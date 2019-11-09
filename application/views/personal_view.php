@@ -26,6 +26,47 @@
     </ul>
   </div>
 
+
+
+<?php foreach ($achiv as $achiv): ?>
+    <div class="col-lg-3 col-md-4 col-sm-12">
+     <?= $achiv->description; ?>
+    </div>
+   <?php endforeach; ?>
+
+
+
+
+   <canvas></canvas>
+
+
+   <!-- <script type="text/javascript" src="../../MDB/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="http://localhost/balthack/MDB/js/DecoderWorker.js"></script> -->
+   <script type="text/javascript" src="http://localhost/balthack/MDB/js/qrcodelib.js"></script>
+   <script type="text/javascript" src="http://localhost/balthack/MDB/js/webcodecamjquery.js"></script>
+
+   <script type="text/javascript">
+       var arg = {
+           resultFunction: function(result) {
+
+           var a=result.code;
+           $.ajax({
+             type: "GET",
+             url: 'http://localhost/balthack/Personal_controllers/addvisit?id_section='+a+'&id='+<?php echo $_SESSION['id']?>,
+             contentType: "application/json",
+             success: function(e){
+               $('#div').html(e);
+
+           }
+
+         });
+           }
+       };
+       $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
+   </script>
+
+
+
 </body>
 </html>
 
@@ -54,11 +95,11 @@ $(document).ready(function() {
 
   $(".btn_info").on('click', function(e){
     //alert(a);
-      alert("dsd");
+
     var text2 = $("#myTextArea").val();
     $.ajax({
       type: "GET",
-      url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2,
+      url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2+'&id='+<?php echo $_SESSION['id']?>,
       contentType: "application/json",
       success: function(e){
         $('#div').html(e);
