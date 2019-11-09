@@ -28,7 +28,7 @@
     public function updatevisit($id_section,$id)
     {
       $this->load->database();
-      $this->db->query("UPDATE visit SET date=date("y-m-d"), id_people='$id',id_section='$id_section');
+      $this->db->query("ISERT INTO visit(id_people,id_section)VALUES ('$id','$id_section')");
     }
   }
 ?>
