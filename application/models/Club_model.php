@@ -12,8 +12,11 @@
 
 		  }
 
-
-
-
+      public function get_clubs_coordination()
+      {
+        $this->load->database();
+        $result=$this->db->query("SELECT id,name,address,rating,x,y FROM club")->result();
+        return $result;
+      }
 	}
 ?>

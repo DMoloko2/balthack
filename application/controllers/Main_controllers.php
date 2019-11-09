@@ -40,6 +40,11 @@ class Main_controllers extends CI_Controller {
 			redirect(base_url());
 		}
 
+		public function clubs_coordination()
+		{
+			$this->load->model('Club_model');
+			$data['clubs'] = $this->Club_model->get_clubs_coordination();
+		}
 	}
 	public function people($id = 0)
 	{
