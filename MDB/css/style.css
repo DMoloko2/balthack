@@ -59,3 +59,7 @@ body{
 	position: relative;
 	top: -40px;
 }
+
+#about_us p span {
+    margin-left: 20px;
+}

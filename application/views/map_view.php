@@ -3,6 +3,56 @@
 <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
 <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
 <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
+<style type="text/css">
+.info-bubble {
+  opacity: 0.75;
+  padding: 0 5px;
+  pointer-events: none;
+}
+
+.info-bubble .info-bubble-title {
+  font-size: 15px;
+  margin-left: 2px;
+}
+
+.info-bubble .info-bubble-label {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.info-bubble .H_ib_close {
+  display: none;
+}
+
+.info-bubble .H_ib_body {
+  padding: 0;
+  width: 275px;
+  height: 140px;
+}
+
+.hover div{
+  margin: 0;
+  padding: 0;
+}
+
+.hover p:nth-child(2){
+  position: relative;
+  top: -30px;
+  right: -50px;
+}
+
+.hover p:nth-child(3){
+  position: relative;
+  top: -40px;
+}
+.hover p:nth-child(4){
+  position: relative;
+  top: -50px;
+}
+
+</style>
 <script>
 
 function addMarkerToGroup(group, coordinate, html) {
@@ -24,8 +74,9 @@ function addInfoBubble(map) {
 
 
   <?php foreach ($clubs as $key => $value) { ?>
-    addMarkerToGroup(group, {lat:<?php echo $value->x;?>, lng:<?php echo $value->y;?>},'<?php echo $value->name,'<br>', $value->address,'<br>Рейтинг:', $value->rating;?>');
+    addMarkerToGroup(group, {lat:<?php echo $value->x;?>, lng:<?php echo $value->y;?>},"<?php echo "<div class='hover'><img width='40px' src='"; base_url();echo "MDB/img/dom.png'></img><p>",$value->name,"</p><p>", $value->address,"</p><p>Рейтинг: ", $value->rating,"</p></div>";?>");
   <?php } ?>
+
   const format = d3.format('.2f');
 
   let hoveredObject;
@@ -114,7 +165,5 @@ switchMapLanguage(map, platform);
 
 addInfoBubble(map);
 </script>
-<?php
-print_r($clubs);
-?>
+
 </html>
