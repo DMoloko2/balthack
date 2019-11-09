@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main_controllers extends CI_Controller {
 	public function index()
 	{
+		$this->load->view('head_view');
 		$this->load->view('main_view');
+		$this->load->view('footer_view');
 
 	}
 	public function club()
@@ -41,6 +43,17 @@ class Main_controllers extends CI_Controller {
 		{
 			$this->load->model('Club_model');
 			$data['clubs'] = $this->Club_model->get_clubs_coordination();
+		}
+	}
+	public function people($id = 0)
+	{
+		if ($id != 0) {
+			$this->load->model('People_model');
+			$data['people'] = $this->People_model->get_people($id);
+			print_r($data);
+		}
+		else{
+			echo "Ты лох!";
 		}
 	}
 }

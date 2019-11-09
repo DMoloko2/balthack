@@ -1,0 +1,50 @@
+*{
+	padding: 0;
+}
+
+body{
+  background: #f6f6f6;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.img_zog{
+  background: url(../img/swimmer.jpg) no-repeat center center fixed;
+  padding-top: 220px;
+  padding-bottom: 230px;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.content_img{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content_img h2, #about_us h4{
+  background: rgb(43, 187, 173);
+  display: initial;
+  font-size: 50px;
+  padding: 0 13px;
+  color: #fff;
+}
+
+.content_img p{
+  background: #414146;
+  display: inline;
+  font-size: 20px;
+  padding: 0 4px;
+  color: #fff;
+}
+
+#about_us h4{
+  font-size: 20px;
+  margin-bottom: 20px
+}
+
+#about_us p{
+  margin-top: 20px
+}
+
+.developer li{
+  list-style: none;
+}

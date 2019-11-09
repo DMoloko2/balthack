@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<section id="img_zog" class="container_fluid img_zog wow fadeIn">
+		<div class="content_img pl-5">
+			<div>
+				<h2>Развивайся вместе с</h2>
+			</div>
+			<div class="mt-3">
+				<h2>нами</h2>
+			</div>
+			<div class="mt-3">
+				<p>Комитет по молодёжной политике</p>
+			</div>
+			<div>
+				<p>Санкт-Петербурга</p>
+			</div>
+		</div>
+	</section>
 
-		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/style.css">
-		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/my.css">
-		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/bootstrap.min.css">
-		<link rel="stylesheet" 		href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
-		<link rel="stylesheet" 		href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-		<title>ProgHab</title>
-	</head>
-	<body>
-    <div class="text-center mt-5">
-      проверка
-    </div>
-  </body>
-<script src="<?= base_url(); ?>MDB/js/jquery-3.4.1.min.js"></script>
-<script src="<?= base_url(); ?>MDB/js/mdb.min.js"></script>
-<script src="<?= base_url(); ?>MDB/js/bootstrap.min.js"></script>
-<script src="<?= base_url(); ?>MDB/js/script.js"></script>
-</html>
+	<section id="about_us" class="container_fluid wow fadeIn my-4">
+		<div class="text-center">
+    	<h4 class="my-4 h4">О нас</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates, quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+		</div>
+	</section>
