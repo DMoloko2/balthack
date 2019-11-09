@@ -24,4 +24,3 @@
 <script src="<?= base_url(); ?>MDB/js/mdb.min.js"></script>
 <script src="<?= base_url(); ?>MDB/js/bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>MDB/js/script.js"></script>
-</html>
