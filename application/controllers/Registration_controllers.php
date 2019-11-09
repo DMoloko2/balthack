@@ -15,8 +15,6 @@ class Registration_controllers extends CI_Controller {
         'redirect_uri'  => $redirect_uri,
         'response_type' => 'code'
     );
-    print_r($params);
-    echo $link = '<p><a href="' . $url . '?' . urldecode(http_build_query($params)) . '">Аутентификация через ВКонтакте</a></p>';
     $code = $this->input->get('code');
     if (isset($code)) {
         $params = array(
@@ -36,12 +34,13 @@ class Registration_controllers extends CI_Controller {
 }
 $userInfo = json_decode(file_get_contents('https://api.vk.com/method/users.get' . '?' . urldecode(http_build_query($params2))), true);
   $this->load->model('Main_model');
-  $this->Main_model->set_name($userInfo['response'][0]['id'],$userInfo['response'][0]['first_name'],$userInfo['response'][0]['last_name'],$userInfo['response'][0]['bdate']);
+  $idUser = $this->Main_model->set_name($userInfo['response'][0]['id'],$userInfo['response'][0]['first_name'],$userInfo['response'][0]['last_name'],$userInfo['response'][0]['bdate']);
 	$this->load->library('session');
+	$this->session->set_userdata('id', $idUser[0]->id);
 	$this->session->set_userdata('first_name', $userInfo['response'][0]['first_name']);
 	$this->session->set_userdata('last_name', $userInfo['response'][0]['last_name']);
 	$this->session->set_userdata('photo_big', $userInfo['response'][0]['photo_big']);
-	print_r($_SESSION);
+	redirect(base_url());
     }
 	}
 }
