@@ -16,8 +16,8 @@
 	</section>
 
 	<!-- Map -->
-	<section class="container my_section_map wow fadeIn">
-		<div class="card card-cascade wider reverse">
+	<section class="container-fluid my_section_map wow fadeIn">
+		<div class="card card-cascade wider reverse" style="border: none;background-color: none;">
 			<div class="view view-cascade overlay">
 				<div class="mt-3 my_map" id="map"></div>
 			</div>

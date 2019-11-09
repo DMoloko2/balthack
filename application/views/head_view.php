@@ -11,6 +11,7 @@
 		<link rel="stylesheet" 		href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
 		<link rel="stylesheet" 		href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<link rel="stylesheet" 		href="https://js.api.here.com/v3/3.1/mapsjs-ui.css?dp-version=1549984893" type="text/css">
+		<script src="<?= base_url(); ?>MDB/js/jquery-3.4.1.min.js"></script>
 		<title>ProgHab</title>
 	</head>
 	<body>
