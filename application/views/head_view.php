@@ -10,6 +10,7 @@
 		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/style.css">
 		<link rel="stylesheet" 		href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
 		<link rel="stylesheet" 		href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+		<link rel="stylesheet" 		type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css?dp-version=1549984893">
 		<title>ProgHab</title>
 	</head>
 	<body>

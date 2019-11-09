@@ -14,10 +14,3 @@
 			</div>
 		</div>
 	</section>
-
-	<section id="about_us" class="container_fluid wow fadeIn my-4">
-		<div class="text-center">
-    	<h4 class="my-4 h4">О нас</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates, quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
-		</div>
-	</section>

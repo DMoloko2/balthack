@@ -6,6 +6,7 @@ class Main_controllers extends CI_Controller {
 	{
 		$this->load->view('head_view');
 		$this->load->view('main_view');
+		$this->load->view('map_view');
 		$this->load->view('footer_view');
 
 	}
@@ -13,7 +14,7 @@ class Main_controllers extends CI_Controller {
 	{
 		$this->load->model('Club_model');
 		$data['club'] = $this->Club_model->get_clubs();
-		print_r($data);
+
 	}
 	public function sections()
 	{
