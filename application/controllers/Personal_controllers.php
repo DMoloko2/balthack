@@ -26,7 +26,7 @@ class Personal_controllers extends CI_Controller
     }
 		public function addvisit()
 		{
-			$id_section=$this->input->get('a');
+			$id_section=$this->input->get('id_section');
 			$id=$this->input->get('id');
 			$this->load->model('Personal_model');
       $this->Personal_model->updatevisit($id_section,$id);
