@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 09 2019 г., 14:20
+-- Время создания: Ноя 09 2019 г., 14:47
 -- Версия сервера: 5.7.26
 -- Версия PHP: 7.2.18
 
@@ -32,8 +32,8 @@ DROP TABLE IF EXISTS `achivment`;
 CREATE TABLE IF NOT EXISTS `achivment` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_people` int(255) UNSIGNED NOT NULL,
-  `description` text NOT NULL,
-  `photo` varchar(255) DEFAULT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  `photo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_people` (`id_people`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -47,12 +47,12 @@ CREATE TABLE IF NOT EXISTS `achivment` (
 DROP TABLE IF EXISTS `club`;
 CREATE TABLE IF NOT EXISTS `club` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `description` text,
   `rating` float(255,0) DEFAULT NULL,
-  `address` text,
-  `x` text,
-  `y` text,
+  `address` text CHARACTER SET utf8,
+  `x` text CHARACTER SET utf8,
+  `y` text CHARACTER SET utf8,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -66,7 +66,7 @@ DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_people` int(11) NOT NULL,
-  `comment` text NOT NULL,
+  `comment` text CHARACTER SET utf8 NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -105,8 +105,8 @@ INSERT INTO `people` (`id`, `sername`, `name`, `otch`, `id_vk`, `information`, `
 DROP TABLE IF EXISTS `section`;
 CREATE TABLE IF NOT EXISTS `section` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `description` text,
+  `name` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `rating` float(255,0) DEFAULT NULL,
   `id_club` int(255) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -122,9 +122,9 @@ CREATE TABLE IF NOT EXISTS `section` (
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE IF NOT EXISTS `teacher` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `sername` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `otch` varchar(255) DEFAULT NULL,
+  `sername` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `otch` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `rating` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
