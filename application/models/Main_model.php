@@ -14,11 +14,16 @@
 		   if(empty(!@$this->db->query("SELECT *FROM people WHERE id_vk='$id_vk'")->result()[0]->id_vk))
 		      {
 		        $this->db->query("UPDATE people SET name='$name',sername='$sername',year='$year',mouth='$mouth',day='$day' WHERE id_vk='$id_vk'");
+						$result=$this->db->query("SELECT people.id from people WHERE id_vk='$id_vk'")->result();
+						return $result;
 		      }
 		      else
 		      {
 		        $this->db->query("INSERT INTO people(name,sername,id_vk,year,mouth,day) VALUES ('$name','$sername','$id_vk','$year','$mouth','$day')");
+						$result=$this->db->query("SELECT people.id from people WHERE id_vk='$id_vk'")->result();
+						return $result;
 		      }
+
 		  }
 	}
 ?>
