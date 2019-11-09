@@ -21,8 +21,8 @@ class Main_controllers extends CI_Controller {
 	}
 	public function trainers()
 	{
-		$this->load->model('Trainers');
-		$data['trainers'] = $this->Trainers->get_trainers();
+		$this->load->model('Trainer_model');
+		$data['trainers'] = $this->Trainer_model->get_trainers();
 		print_r($data);
 	}
 }
