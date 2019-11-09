@@ -14,7 +14,7 @@ class Main_controllers extends CI_Controller {
 
 	function get_header(){
 	 if (isset($_SESSION['first_name'])) {
-		 $data['userData'] = "<a class='nav-link p-0' >
+		 $data['userData'] = "<a class='nav-link p-0' href='".base_url()."Personal_controllers/personal/".$_SESSION['id']."' >
 										 <span class='mx-2'>" .$_SESSION['first_name']. " ".  $_SESSION['last_name'] . "</span>
 										 <img src='".$_SESSION['photo_big']."' class='rounded-circle z-depth-0'
 											 alt='avatar image' height='50'>
@@ -44,7 +44,7 @@ class Main_controllers extends CI_Controller {
 		$data['section'] = $this->Section_model->get_sections();
 		print_r($data);
 	}
-	
+
 	public function trainers()
 	{
 		$this->load->model('Trainer_model');
