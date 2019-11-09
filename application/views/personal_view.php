@@ -25,7 +25,7 @@
       </li>
     </ul>
   </div>
-
+<?php print_r($achiv[0]->description); ?>
 </body>
 </html>
 
@@ -54,11 +54,11 @@ $(document).ready(function() {
 
   $(".btn_info").on('click', function(e){
     //alert(a);
-      alert("dsd");
+
     var text2 = $("#myTextArea").val();
     $.ajax({
       type: "GET",
-      url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2,
+      url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2+'&id='+<?php echo $_SESSION['id']?>,
       contentType: "application/json",
       success: function(e){
         $('#div').html(e);
