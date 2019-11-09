@@ -5,7 +5,7 @@ class Registration_controllers extends CI_Controller {
 	{
     $client_id = '6996347'; // ID приложения
     $client_secret = '3NQq6AJdlvBRGuDmuCgp'; // Защищённый ключ
-    $redirect_uri = 'http://localhost/balthack/Registration_controllers';
+    $redirect_uri = 'http://localhost/balthack/Registration_controllers/';
 
 
     $url = 'http://oauth.vk.com/authorize';
@@ -37,6 +37,11 @@ class Registration_controllers extends CI_Controller {
 $userInfo = json_decode(file_get_contents('https://api.vk.com/method/users.get' . '?' . urldecode(http_build_query($params2))), true);
   $this->load->model('Main_model');
   $this->Main_model->set_name($userInfo['response'][0]['id'],$userInfo['response'][0]['first_name'],$userInfo['response'][0]['last_name'],$userInfo['response'][0]['bdate']);
+	$this->load->library('session');
+	$this->session->set_userdata('first_name', $userInfo['response'][0]['first_name']);
+	$this->session->set_userdata('last_name', $userInfo['response'][0]['last_name']);
+	$this->session->set_userdata('photo_big', $userInfo['response'][0]['photo_big']);
+	print_r($_SESSION);
     }
 	}
 }
