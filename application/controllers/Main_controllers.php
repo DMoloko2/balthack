@@ -38,5 +38,16 @@ class Main_controllers extends CI_Controller {
 		}
 
 	}
+	public function people($id = 0)
+	{
+		if ($id != 0) {
+			$this->load->model('People_model');
+			$data['people'] = $this->People_model->get_people($id);
+			print_r($data);
+		}
+		else{
+			echo "Ты лох!";
+		}
+	}
 }
 ?>
