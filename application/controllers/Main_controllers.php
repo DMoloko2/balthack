@@ -9,14 +9,14 @@ class Main_controllers extends CI_Controller {
 	}
 	public function club()
 	{
-		$this->load->modal('Club_model');
-		$data['club'] = $this->Club_model->get_club();
+		$this->load->model('Club_model');
+		$data['club'] = $this->Club_model->get_clubs();
 		print_r($data);
 	}
 	public function sections()
 	{
-		$this->load->modal('Section_model');
-		$data['section'] = $this->Club_model->get_club();
+		$this->load->model('Section_model');
+		$data['section'] = $this->Section_model->get_sections();
 		print_r($data);
 	}
 	public function trainers()
