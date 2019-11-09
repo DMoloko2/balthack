@@ -24,5 +24,14 @@ class Personal_controllers extends CI_Controller
       $this->Personal_model->updateinfo($info,$id);
       echo "Успешно";
     }
+		public function addvisit()
+		{
+			$id_section=$this->input->get('a');
+			$id=$this->input->get('id');
+			$this->load->model('Personal_model');
+      $this->Personal_model->updatevisit($id_section,$id);
+		}
+
+
  }
 ?>

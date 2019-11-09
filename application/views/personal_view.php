@@ -48,7 +48,18 @@
    <script type="text/javascript">
        var arg = {
            resultFunction: function(result) {
-               $('body').append($('<li>' + result.format + ': ' + result.code + '</li>'));
+
+           var a=result.code;
+           $.ajax({
+             type: "GET",
+             url: 'http://localhost/balthack/Personal_controllers/addvisit?id_section='+a+'&id='+<?php echo $_SESSION['id']?>,
+             contentType: "application/json",
+             success: function(e){
+               $('#div').html(e);
+
+           }
+
+         });
            }
        };
        $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();

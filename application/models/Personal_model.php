@@ -25,5 +25,10 @@
        return $result;
     }
 
+    public function updatevisit($id_section,$id)
+    {
+      $this->load->database();
+      $this->db->query("UPDATE visit SET date=date("y-m-d"), id_people='$id',id_section='$id_section');
+    }
   }
 ?>
