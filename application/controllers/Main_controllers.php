@@ -25,7 +25,7 @@ class Main_controllers extends CI_Controller {
 		$data['trainers'] = $this->Trainer_model->get_trainers();
 		print_r($data);
 	}
-<<<<<<< HEAD
+
 	public function trainersclub($id = 0)
 	{
 		if($id != 0){
@@ -36,13 +36,7 @@ class Main_controllers extends CI_Controller {
 		else {
 			redirect(base_url());
 		}
-=======
-	public function trainersclub($id)
-	{
-		$this->load->model('Trainer_model');
-		$data['trainers'] = $this->Trainer_model->get_trainer_from_club($id);
-		print_r($data);
->>>>>>> eac1bf7b7c6055469bbb1c714cb6ab1eab8d004d
+
 	}
 }
 ?>
