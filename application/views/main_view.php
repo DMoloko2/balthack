@@ -23,7 +23,7 @@
 			</div>
 			<div class="card-body card-body-cascade text-center">
 				<h4 class="card-title"><strong>Наши центры</strong></h4>
-				<p class="card-text">На данной карте Вы можите наглядно увидеть расположение и рейтинг подростково -наших молодёжных центров</p>
+				<p class="card-text">На данной карте Вы можите наглядно увидеть расположение и рейтинг наших подростково - молодёжных центров</p>
 			</div>
 		</div>
 	</section>
