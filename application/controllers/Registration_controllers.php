@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Registration extends CI_Controller {
+class Registration_controllers extends CI_Controller {
 	public function index()
 	{
     $client_id = '6996347'; // ID приложения
     $client_secret = '3NQq6AJdlvBRGuDmuCgp'; // Защищённый ключ
-    $redirect_uri = 'http://localhost/index.php/Registration';
+    $redirect_uri = 'http://localhost/balthack/Registration_controllers';
 
 
     $url = 'http://oauth.vk.com/authorize';
@@ -36,7 +36,7 @@ class Registration extends CI_Controller {
 }
 $userInfo = json_decode(file_get_contents('https://api.vk.com/method/users.get' . '?' . urldecode(http_build_query($params2))), true);
   $this->load->model('Main_model');
-  $this->Main_model->set_name($userInfo['response'][0]['id'],$userInfo['response'][0]['first_name'],$userInfo['response'][0]['last_name'],$userInfo['response'][0]['bdate'])
+  $this->Main_model->set_name($userInfo['response'][0]['id'],$userInfo['response'][0]['first_name'],$userInfo['response'][0]['last_name'],$userInfo['response'][0]['bdate']);
     }
 	}
 }

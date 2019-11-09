@@ -13,7 +13,7 @@
 		      }
 		      else
 		      {
-		        $this->db->query("INSERT INTO people(name,sername,id_vk,date) VALUES ('$name','$sername','$id_vk',""$date")");
+		        $this->db->query("INSERT INTO people(name,sername,id_vk,date) VALUES ('$name','$sername','$id_vk','$date')");
 		      }
 		  }
 	}
