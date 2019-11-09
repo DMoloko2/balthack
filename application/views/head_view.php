@@ -40,11 +40,7 @@
     			</ul>
 					<ul class="navbar-nav ml-auto nav-flex-icons">
 						<li class="nav-item avatar">
-							<a class="nav-link p-0" href="http://oauth.vk.com/authorize?client_id=6996347&amp;redirect_uri=http://localhost/balthack/Registration_controllers/&amp;response_type=code">
-								<span class="mx-2">Войти в личный кабинет</span>
-								<img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
-									alt="avatar image" height="50">
-							</a>
+							<?= $userData; ?>
 						</li>
 					</ul>
   			</div>
