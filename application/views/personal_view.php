@@ -25,7 +25,12 @@
       </li>
     </ul>
   </div>
-<?php print_r($achiv[0]->description); ?>
+
+<?php foreach ($achiv as $achiv): ?>
+    <div class="col-lg-3 col-md-4 col-sm-12">
+     <?= $achiv->description; ?>
+    </div>
+   <?php endforeach; ?>
 </body>
 </html>
 
