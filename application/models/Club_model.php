@@ -7,7 +7,7 @@
 		{
 		  $this->load->database();
 		//	print_r($this->db->query("SELECT id_vk FROM users WHERE id_vk='$id_vk'")->result()[0]->id_vk->count());
-		  $result=$this->db->query("SELECT name,address,rating FROM club ORDER BY club.rating DESC ")->result();
+		  $result=$this->db->query("SELECT id,name,address,rating FROM club ORDER BY club.rating DESC ")->result();
       return $result;
 
 		  }
