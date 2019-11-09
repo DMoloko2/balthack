@@ -20,7 +20,7 @@ body{
   margin: 0 auto;
 }
 
-.content_img h2, #about_us h4, #my_map h4{
+.content_img h2, #about_us h4, .card-body-cascade h4{
   background: rgb(43, 187, 173);
   display: initial;
   font-size: 50px;
@@ -36,7 +36,7 @@ body{
   color: #fff;
 }
 
-#about_us h4, #my_map h4{
+#about_us h4, .card-body-cascade h4{
   font-size: 20px;
   margin-bottom: 20px
 }
