@@ -4,10 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main_controllers extends CI_Controller {
 	public function index()
 	{
+		$this->load->model('Club_model');
+		$data['clubs'] = $this->Club_model->get_clubs_coordination();
+
 		$this->load->view('head_view');
 		$this->load->view('main_view');
-		$this->load->view('map_view');
 		$this->load->view('footer_view');
+		$this->load->view('map_view', $data);
 
 	}
 	public function club()
@@ -39,12 +42,6 @@ class Main_controllers extends CI_Controller {
 		else {
 			redirect(base_url());
 		}
-	}
-	
-	public function clubs_coordination()
-	{
-		$this->load->model('Club_model');
-		$data['clubs'] = $this->Club_model->get_clubs_coordination();
 	}
 
 	public function people($id = 0)
