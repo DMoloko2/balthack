@@ -36,15 +36,22 @@ class Main_controllers extends CI_Controller {
 		$this->load->model('Club_model');
 		$data['club'] = $this->Club_model->get_clubs();
 
+		$this->get_header();
+		$this->load->view('rating_view', $data);
+		$this->load->view('footer_view');
+
 	}
 
 	public function sections()
 	{
 		$this->load->model('Section_model');
 		$data['section'] = $this->Section_model->get_sections();
-		print_r($data);
+
+		$this->get_header();
+		$this->load->view('rating_section_view', $data);
+		$this->load->view('footer_view');
 	}
-	
+
 	public function trainers()
 	{
 		$this->load->model('Trainer_model');

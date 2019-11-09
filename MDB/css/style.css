@@ -59,3 +59,43 @@ body{
 	position: relative;
 	top: -40px;
 }
+
+.rating{
+	margin-top: 80px;
+}
+
+.rating a{
+	color: rgb(255, 160, 0);
+}
+
+.rating a:hover{
+	text-decoration: none;
+}
+
+.img_bulding_rating{
+	height: 100px;
+	width: 100px;
+}
+
+.img_text_rating{
+	position: relative;
+	top: -30px;
+	right: -115px;
+	color: gray;
+}
+
+.my_float{
+	float: right;
+	position: relative;
+	top: -100px;
+}
+
+.my_-_mb25{
+	margin-bottom: -25px;
+}
+
+.chool{
+	position: relative;
+  top: 42px;
+  left: 115px;
+}

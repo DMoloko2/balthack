@@ -26,15 +26,15 @@
       			<li class="nav-item dropdown">
         			<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Записаться</a>
         			<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-			          <a class="dropdown-item" href="#">Через выбор центра</a>
-			          <a class="dropdown-item" href="#">Через выбор секции</a>
+			          <a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/club">Через выбор центра</a>
+			          <a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/sections">Через выбор секции</a>
         			</div>
       			</li>
 						<li class="nav-item dropdown">
         			<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Рейтинг</a>
         			<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" href="#">Молодёжных центров</a>
-			          <a class="dropdown-item" href="#">Кружков(секций)</a>
+			          <a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/club">Молодёжных центров</a>
+			          <a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/sections">Кружков(секций)</a>
 								<a class="dropdown-item" href="#">Преподователей(тренеров)</a>
         			</div>
       			</li>
