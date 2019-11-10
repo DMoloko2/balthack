@@ -1,7 +1,7 @@
 <section class="rating container mb-5">
   <h3 class="text-center pb-2">Подростково - молодёжные центры</h3>
   <?php foreach ($club as $key): ?>
-    <a href="<?= base_url(); ?>Main_controllers/center_info/<?= $key->id; ?>">
+    <a href="<?= base_url(); ?>Admin_controllers/getcentername/<?= $key->id; ?>">
       <div class="card wow fadeInUp">
         <div class="card-body pb-0 my_-_mb25">
           <div class="container list-group-flush">
