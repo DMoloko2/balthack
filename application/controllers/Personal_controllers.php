@@ -90,5 +90,10 @@ class Personal_controllers extends CI_Controller
 			$this->load->view('rating_view', $data);
 			$this->load->view('footer_view');
 		}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 731c75c26f958d4bcbd9a5b9797deded592c98fb
  }
 ?>
