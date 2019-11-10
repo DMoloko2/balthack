@@ -124,7 +124,7 @@
 
 });
 
-$(".btn").on('click', function(e){
+$(".btn_info").on('click', function(e){
   //alert(a);
 
   var text2 = $("#myTextArea").val();
