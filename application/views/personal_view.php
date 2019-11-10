@@ -21,6 +21,8 @@
           </textarea></li>
           <div id='div'></div>
           <button class='btn_info'>Изменить информацию</button>
+          <button type="button" class="btn btn-primary" id="button_scan">scan</button>
+          <div id="good">Сканирование завершено</div>
         </ul>
       </li>
     </ul>
@@ -46,6 +48,8 @@
    <script type="text/javascript" src="http://localhost/balthack/MDB/js/webcodecamjquery.js"></script>
 
    <script type="text/javascript">
+      var scet = 0;
+
        var arg = {
            resultFunction: function(result) {
 
@@ -60,9 +64,28 @@
            }
 
          });
+         $('canvas').hide();
+         $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.stop();
+
+         scet = scet + 1;
            }
        };
-       $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
+
+       $("#button_scan").click(function(){
+         if(scet%2==0){
+           $("canvas").show();
+           $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
+           scet=scet + 1;
+         }
+         else{
+           $('canvas').hide();
+           $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
+           scet = scet + 1;
+         }
+
+       });
+        $('canvas').hide();
+
    </script>
 
 
