@@ -13,7 +13,7 @@
     public function get_club_info2($id_club)
     {
       $this->load->database();
-      $result=$this->db->query("SELECT teacher.id,teacher.name,teacher.sername,teacher.otch,club.name AS club_name,section.name AS section_name,club.address,teacher.rating FROM club,teacher,section WHERE teacher.id_section=section.id AND section.id_club=club.id AND teacher.id='$id_club' ORDER BY teacher.rating DESC")->result();
+      $result=$this->db->query("SELECT teacher.id,teacher.name,teacher.sername,teacher.otch,club.name AS club_name,section.name AS section_name,club.address,teacher.rating FROM club,teacher,section WHERE teacher.id_section=section.id AND section.id_club=club.id AND club.id='$id_club' ORDER BY teacher.rating DESC")->result();
       return $result;
     }
 

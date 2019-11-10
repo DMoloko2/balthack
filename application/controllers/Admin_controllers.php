@@ -135,7 +135,6 @@ class Admin_controllers extends CI_Controller {
 		$this->load->model('Igor_model');
 		$data['name_center'] = $this->Igor_model->get_club_info1($id);
 		$data['trainers'] = $this->Igor_model->get_club_info2($id);
-		print_r(	$data['trainers']);
 		$data['section'] = $this->Igor_model->get_club_info3($id);
 
 		$this->get_header();
