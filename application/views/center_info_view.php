@@ -1,5 +1,8 @@
 <section class="center_info">
   <div class="container">
+    <?php print_r($name_center); ?>
+    <?php print_r($trainers); ?>
+    <?php print_r($section); ?>
     <div class="row text-center">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -34,7 +37,9 @@
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12 center_info_div">
           <h4>Информация о центре</h4>
-          <p class="text-left mt-3">Центр name</p>
+          <?php foreach ($name_center as $name_center_key): ?>
+            <p class="text-left mt-3"><?= $name_center_key->name; ?></p>
+          <?php endforeach; ?>
           <p class="text-left">График работы: с 09:00 до 22:00 ежедневно</p>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
@@ -81,36 +86,40 @@
           <div class="card-body pb-0 my_-_mb25">
             <div class="container list-group-flush">
               <div class="list-group-item my_color_yellow">
-                <div class="" id='rateyo-readonly-widg1'></div>
-                <p class="center_info_position_raiteng">5</p>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p class="">Суслов</p>
-                    <p class="">игорь</p>
-                    <p class="">игорь</p>
+                <?php foreach ($trainers as $trainers_key): ?>
+                  <div class="" id='rateyo-readonly-widg<?= $trainers_key->id; ?>'></div>
+                  <p class="center_info_position_raiteng"><?= $trainers_key->rating; ?></p>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p class=""><?= $trainers_key->sername; ?></p>
+                      <p class=""><?= $trainers_key->name; ?></p>
+                      <p class=""><?= $trainers_key->otch; ?></p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="mb-0"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
+                    alt="avatar image"></p>
+                    </div>
                   </div>
-                  <div class="col-sm-6">
-                    <p class="mb-0"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
-                  alt="avatar image"></p>
-                  </div>
-                </div>
-                <p class="my_color_grey">Секция: бокс</p>
-                <p class="my_color_grey">адрес : адрес</p>
+                  <p class="my_color_grey">Секция: <?= $trainers_key->section_name; ?></p>
+                  <p class="my_color_grey">адрес : <?= $trainers_key->address; ?></p>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
         </div>
 
-        <script>
-            $("#rateyo-readonly-widg1").rateYo({
-              rating: 5,
-              numStars: 5,
-              precision: 2,
-              minValue: 1,
-              maxValue: 5,
-              readOnly: true
-            });
-        </script>
+        <?php foreach ($trainers as $key): ?>
+          <script>
+              $("#rateyo-readonly-widg<?php echo $key->id; ?>").rateYo({
+                rating: <?php echo $key->rating; ?>,
+                numStars: 5,
+                precision: 2,
+                minValue: 1,
+                maxValue: 5,
+                readOnly: true
+              });
+          </script>
+        <?php endforeach; ?>
       </div>
 
       <div class="modal-footer text-center">
