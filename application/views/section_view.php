@@ -1,5 +1,11 @@
 <section class="center_info">
   <div class="container">
+    <?php foreach ($name_sections as $name_sections_key ) {
+      print_r($name_sections_key);
+    } ?>
+    <?php foreach ($pepolinsection as $pepolinsection_view_key ) {
+      print_r($pepolinsection_view_key);
+    } ?>
     <div class="row text-center">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -33,7 +39,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12 center_info_div">
-          <h4>Информация о центре</h4>
+          <h4>Информация о секции</h4>
           <?php foreach ($name_center as $name_center_key): ?>
             <p class="text-left mt-3"><?= $name_center_key->name; ?></p>
           <?php endforeach; ?>
