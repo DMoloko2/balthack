@@ -79,7 +79,7 @@ body{
 
 .img_text_rating{
 	position: relative;
-	top: -30px;
+	top: -95px;
 	right: -115px;
 	color: gray;
 }
@@ -91,7 +91,7 @@ body{
 }
 
 .my_-_mb25{
-	margin-bottom: -25px;
+	margin-bottom: -70px;
 }
 
 #about_us p span {
@@ -114,13 +114,13 @@ body{
 .rating_star{
 	float: right;
 	position: relative;
-	top: -35px;
-	left: -30px;
+    top: -86px;
+    left: -40px;
 }
 
 .rating_star_int{
 	float: right;
   position: relative;
   right: -178px;
-  top: -27px;
+  top: -80px;
 }
