@@ -72,17 +72,40 @@
               <textarea id='myTextArea' style="margin-top: 0px;    margin-bottom: 0px;    height: 78px;    border: none;    padding: 10px;    border-radius: 5px;    background-color: #2bbbad!important;    color: #fff;">
                 <?php print_r($personal[0]->information); ?></textarea>
               <div id='div'></div>
-              <button class='btn btn-primary '>Изменить информацию</button>
-              <button type="button" class="btn btn-danger" id="button_scan">scan</button>
-              <div id="good">Сканирование завершено</div>
+              <button class='btn btn-primary' id='change_description'>Изменить информацию</button>
+
             </ul>
           </li>
         </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm">
+      </div>
+    </div>
   </div>
 
 
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal" id="button_scan" style="    position: absolute;    top: 60px;    right: 5px;">
+    Сканировать!
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"  style="width:400px";>
+        <canvas></canvas>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close_btn_id">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <?php foreach ($achiv as $achiv): ?>
     <div class="col-lg-3 col-md-4 col-sm-12">
@@ -99,7 +122,7 @@
 <div class='rrr'></div>
 
 
-   <canvas></canvas>
+
 
 
    <!-- <script type="text/javascript" src="../../MDB/js/jquery.js"></script> -->
@@ -108,7 +131,7 @@
    <script type="text/javascript" src="http://localhost/balthack/MDB/js/webcodecamjquery.js"></script>
 
    <script type="text/javascript">
-      var scet = 0;
+
 
        var arg = {
            resultFunction: function(result) {
@@ -121,30 +144,18 @@
              success: function(e){
                $('#div').html(e);
 
-           }
-
-         });
-         $('canvas').hide();
+         }});
          $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.stop();
+         $("canvas").hide();
+         $("#basicExampleModal").hide();
 
-         scet = scet + 1;
-           }
-       };
+       }};
 
        $("#button_scan").click(function(){
-         if(scet%2==0){
+
            $("canvas").show();
            $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
-           scet=scet + 1;
-         }
-         else{
-           $('canvas').hide();
-           $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.play();
-           scet = scet + 1;
-         }
-
        });
-        $('canvas').hide();
 
    </script>
 
@@ -178,7 +189,7 @@
 
 });
 
-$(".btn_info").on('click', function(e){
+$("#change_description").on('click', function(e){
   //alert(a);
 
   var text2 = $("#myTextArea").val();
