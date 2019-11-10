@@ -74,7 +74,6 @@ class Personal_controllers extends CI_Controller
 			$this->load->model('Igor_model');
 			$data['name_sections'] = $this->Igor_model->get_club_info4($id);
 			$data['pepolinsection'] = $this->Igor_model->get_club_info5($id);
-			print_r($data);
 
 			$this->get_header();
 			$this->load->view('section_view', $data);
@@ -91,7 +90,5 @@ class Personal_controllers extends CI_Controller
 			$this->load->view('rating_view', $data);
 			$this->load->view('footer_view');
 		}
-
-
  }
 ?>
