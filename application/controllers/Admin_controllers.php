@@ -93,20 +93,28 @@ class Admin_controllers extends CI_Controller {
 
         $f = $this->change_input($j);
         $data['date'][$g] = $f. " ". $i;
-        $g++;  
+        $g++;
       }
     }
     print_r($data);
   }
-  private function isadmin()
+  public function getcentername($id)
   {
-    if ($_SESSION['admin_flag'] == 0) {
-    $this->load->view('errors/html/index.html');
-    }
-    else{
-      return true;
-    }
+    $this->load->model('Igor_model');
+    $data['name_center'] = $this->Igor_model->get_club_info1($id);
+    $data['trainers'] = $this->Igor_model->get_club_info2($id);
+    $data['section'] = $this->Igor_model->get_club_info3($id);
+    print_r($data);
   }
+  // private function isadmin()
+  // {
+  //   if ($_SESSION['admin_flag'] == 0) {
+  //   $this->load->view('errors/html/index.html');
+  //   }
+  //   else{
+  //     return true;
+  //   }
+  // }
 
 }
 ?>
