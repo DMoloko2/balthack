@@ -151,5 +151,11 @@ class Admin_controllers extends CI_Controller {
 	  //   }
 	  // }
 	}
+
+	public function my_statistick(){
+		$this->get_header();
+		$this->load->view('statistick_view');
+		$this->load->view('footer_view');
+	}
 }
 ?>

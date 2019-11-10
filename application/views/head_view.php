@@ -7,6 +7,7 @@
 
 		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/my.css">
 		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/bootstrap.min.css">
+		<link rel="stylesheet"	 	href="<?= base_url(); ?>MDB/css/mdb.min.css">
 		<link rel="stylesheet" 		href="<?= base_url(); ?>MDB/css/style.css">
 		<link rel="stylesheet" 		href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
 		<link rel="stylesheet" 		href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -40,6 +41,11 @@
 								<a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/trainers">Преподователей(тренеров)</a>
         			</div>
       			</li>
+						<li class="nav-item">
+			        <a class="nav-link" href="<?= base_url(); ?>Admin_controllers/my_statistick">Статистика
+			          <span class="sr-only">(current)</span>
+			        </a>
+			      </li>
     			</ul>
 					<ul class="navbar-nav ml-auto nav-flex-icons">
 						<li class="nav-item avatar">
