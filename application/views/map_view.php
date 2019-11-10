@@ -166,16 +166,4 @@ switchMapLanguage(map, platform);
 addInfoBubble(map);
 </script>
 
-
-
-<table>
-  <tr>
-    <td style="padding-right:10px">
-      <label for="input-3" class="control-label">Likes</label>
-    </td>
-    <td>
-      <input id="input-3" name="input-3" value="4" class="rating-loading">
-    </td>
-  </tr>
-</table>
 </html>
