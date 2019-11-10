@@ -29,7 +29,7 @@
 .info-bubble .H_ib_body {
   padding: 0;
   width: 275px;
-  height: 140px;
+  height: 190px;
 }
 
 .hover div{
@@ -52,6 +52,11 @@
   top: -50px;
 }
 
+.hoverclass{
+  position: relative;
+  top: -65px;
+}
+
 </style>
 <script>
 
@@ -66,16 +71,17 @@ function addMarkerToGroup(group, coordinate, html) {
  * Add two markers showing the position of Liverpool and Manchester City football clubs.
  * Clicking on a marker opens an infobubble which holds HTML content related to the marker.
  * @param  {H.Map} map      A HERE Map instance within the application
- */
+ */var group = new H.map.Group();
 function addInfoBubble(map) {
-  var group = new H.map.Group();
+
 
   map.addObject(group);
 
 
   <?php foreach ($clubs as $key => $value) { ?>
-    addMarkerToGroup(group, {lat:<?php echo $value->x;?>, lng:<?php echo $value->y;?>},"<?php echo "<div class='hover'><img width='40px' src='"; base_url();echo "MDB/img/dom.png'></img><p>",$value->name,"</p><p>", $value->address,"</p><p>Рейтинг: ", $value->rating,"</p></div>";?>");
+    addMarkerToGroup(group, {lat:<?php echo $value->x;?>, lng:<?php echo $value->y;?>},"<?php echo "<div class='hover' id = '",$value->id,"'><img width='40px' src='"; base_url();echo "MDB/img/dom.png'></img><p>",$value->name,"</p><p>", $value->address,"</p><p>Рейтинг: ", $value->rating,"<div class='hoverclass' id = 'rateyo-readonly-widg",$value->id,"'></div></p></div>";?>");
   <?php } ?>
+
 
   const format = d3.format('.2f');
 
@@ -103,18 +109,36 @@ map.addEventListener('pointermove', (e) => {
             infoBubble.setPosition(pos);
             infoBubble.setContent(hoveredObject['data']);
             infoBubble.open();
+
+
+              <?php foreach ($clubs as $key){ ?>
+
+                $("#rateyo-readonly-widg<?php echo $key->id; ?>").rateYo({
+                  rating: <?php echo $key->rating; ?>,
+                  numStars: 5,
+                  precision: 2,
+                  minValue: 1,
+                  maxValue: 5,
+                  readOnly: true
+                });
+              <?php } ?>
         }
     }
+
+
 });
 }
 
+group.addEventListener('tap', function (evt) {
+  //////////////////////////////////////////////////////////////////////////////////////////
+  console.log(evt);
+      var id_club=evt.target['data'].split("id = ")[1][1];
+      //document.location.href = "http://localhost/balthack/"+id_club;
+///////////////////////////////////////////////////////////////////////////////////////////
+  }, false);
 
 
 
-// function addMarkersToMap(map, lat1, lng1) {
-//     var parisMarker = new H.map.Marker({lat: lat1, lng: lng1});
-//     map.addObject(parisMarker);
-// }
 
 function switchMapLanguage(map, platform){
   // Create default layers
@@ -164,6 +188,22 @@ var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
 switchMapLanguage(map, platform);
 
 addInfoBubble(map);
-</script>
 
+
+
+
+  <?php foreach ($clubs as $key){ ?>
+
+    $("#rateyo-readonly-widg<?php echo $key->id; ?>").rateYo({
+      rating: <?php echo $key->rating; ?>,
+      numStars: 5,
+      precision: 2,
+      minValue: 1,
+      maxValue: 5,
+      readOnly: true
+    });
+  <?php } ?>
+
+
+</script>
 </html>
