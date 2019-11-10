@@ -146,8 +146,8 @@
 
          }});
          $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery.stop();
-         $("canvas").hide();
-         $("#basicExampleModal").hide();
+
+         $(".modal").modal("hide");
 
        }};
 
