@@ -10,7 +10,7 @@
           <div class="container list-group-flush">
             <div class="list-group-item">
               <p class="chool searchable"> <?= $ticher->sername.' '.$ticher->name.' '.$ticher->otch; ?></p>
-              <p class="mb-0"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0 mr-3 img_bulding_rating"
+              <p class="mb-0"><img src="https://cdnmyslo.ru/NewsImage/59/c8/59c8cf6e-d4ae-41cc-a0a0-da92b6905878_1.jpg" class="rounded-circle z-depth-0 mr-3 img_bulding_rating"
             alt="avatar image"><div class="searchable position_dead">Центр : <?= $ticher->club_name; ?></div><br></p>
               <p class="section_rating searchable">Секция: <?= $ticher->section_name; ?></p>
               <p class="img_text_rating searchable">адрес : <?= $ticher->address; ?></p>
