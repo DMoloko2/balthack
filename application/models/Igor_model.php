@@ -23,5 +23,19 @@
       $result=$this->db->query("SELECT section.id,section.name FROM club,section WHERE club.id='$id_club' AND section.id_club=club.id")->result();
       return $result;
     }
+
+    public function get_club_info4($id_section)
+    {
+      $this->load->database();
+      $result=$this->db->query("SELECT section.name FROM section WHERE  section.id='$id_section'")->result();
+      return $result;
+    }
+
+    public function get_club_info5($id_section)
+    {
+      $this->load->database();
+      $result=$this->db->query("SELECT people.name,people.sername,whowhere.rating FROM people,whowhere,section WHERE whowhere.id_people=people.id AND section.id='$id_section' AND whowhere.id_section=section.id ")->result();
+      return $result;
+    }
   }
   ?>
