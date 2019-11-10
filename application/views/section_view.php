@@ -1,11 +1,5 @@
 <section class="center_info">
   <div class="container">
-    <?php foreach ($name_sections as $name_sections_key ) {
-      print_r($name_sections_key);
-    } ?>
-    <?php foreach ($pepolinsection as $pepolinsection_view_key ) {
-      print_r($pepolinsection_view_key);
-    } ?>
     <div class="row text-center">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -39,27 +33,27 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12 center_info_div">
-          <h4>Информация о секции</h4>
-          <?php foreach ($name_center as $name_center_key): ?>
-            <p class="text-left mt-3"><?= $name_center_key->name; ?></p>
+          <h4>Информация</h4>
+          <?php foreach ($name_sections as $pepolinsection_view_key): ?>
+            <p class="text-left mt-3"><?= $pepolinsection_view_key->name; ?></p>
           <?php endforeach; ?>
-          <p class="text-left">График работы: с 09:00 до 22:00 ежедневно</p>
+          <p class="text-left">График работы: ПН-СР-ПТ с 18:00 до 20:00</p>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <button type="button" class="btn my_btn" data-toggle="modal" data-target="#fluidModalRightSuccessDemo">Рейтинг преподователей</button>
+        <button type="button" class="btn my_btn" data-toggle="modal" data-target="#fluidModalRightSuccessDemo">Рейтинг учеников</button>
       </div>
     </div>
     <div class="row text-center mt-5">
       <div class="col-sm-12">
         <div class="mb-3">
-          <h4 class="center_info_div_h4">Секции в центре</h4>
+          <h4 class="center_info_div_h4">Ученики данной секции</h4>
         </div>
-        <?php foreach ($section as $section_key): ?>
-          <a href="<?= base_url(); ?>Personal_controllers/getstudent/<?php print_r($section_key->id); ?>" class="center_info_a">
+        <?php foreach ($pepolinsection as $pepolinsection_view_key): ?>
+          <a href="<?= base_url(); ?>Personal_controllers/personal/<?php print_r($pepolinsection_view_key->id); ?>" class="center_info_a">
             <ul class="list-group list-group-flush">
               <ul class="list-group">
                 <li class="list-group-item">
-                  <?php print_r($section_key->name); ?>
+                  <?php print_r($pepolinsection_view_key->name); ?>
                 </li>
               </ul>
             </ul>
@@ -78,7 +72,7 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="heading lead">Рейтинг преподавателей</p>
+        <p class="heading lead">Рейтинг учеников</p>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" class="white-text">&times;</span>
@@ -91,29 +85,26 @@
           <div class="card-body pb-0">
             <div class="container list-group-flush">
               <div class="list-group-item my_color_yellow">
-                <?php foreach ($trainers as $trainers_key): ?>
-                  <div class="" id='rateyo-readonly-widg<?= $trainers_key->id; ?>'></div>
-                  <p class="center_info_position_raiteng"><?= $trainers_key->rating; ?></p>
+                <?php foreach ($pepolinsection as $pepolinsection_key): ?>
+                  <div class="" id='rateyo-readonly-widg<?= $pepolinsection_key->id; ?>'></div>
+                  <p class="center_info_position_raiteng"><?= $pepolinsection_key->rating; ?></p>
                   <div class="row">
                     <div class="col-sm-6">
-                      <p class=""><?= $trainers_key->sername; ?></p>
-                      <p class=""><?= $trainers_key->name; ?></p>
-                      <p class=""><?= $trainers_key->otch; ?></p>
+                      <p class=""><?= $pepolinsection_key->sername; ?></p>
+                      <p class=""><?= $pepolinsection_key->name; ?></p>
                     </div>
                     <div class="col-sm-6">
                       <p class="mb-0"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
                     alt="avatar image"></p>
                     </div>
                   </div>
-                  <p class="my_color_grey">Секция: <?= $trainers_key->section_name; ?></p>
-                  <p class="my_color_grey">адрес : <?= $trainers_key->address; ?></p>
                 <?php endforeach; ?>
               </div>
             </div>
           </div>
         </div>
 
-        <?php foreach ($trainers as $key): ?>
+        <?php foreach ($pepolinsection as $key): ?>
           <script>
               $("#rateyo-readonly-widg<?php echo $key->id; ?>").rateYo({
                 rating: <?php echo $key->rating; ?>,
