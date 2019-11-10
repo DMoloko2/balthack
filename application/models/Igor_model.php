@@ -13,7 +13,7 @@
     public function get_club_info2($id_club)
     {
       $this->load->database();
-      $result=$this->db->query("SELECT teacher.name,teacher.sername,teacher.otch,club.name AS club_name,section.name AS section name,club.address,teacher.rating FROM club,teacher,section WHERE teacher.id_section=section.id AND section.id_club=club.id AND club.id='$id_club'")->result();
+      $result=$this->db->query("SELECT teacher.id,teacher.name,teacher.sername,teacher.otch,club.name AS club_name,section.name AS section name,club.address,teacher.rating FROM club,teacher,section WHERE teacher.id_section=section.id AND section.id_club=club.id AND club.id='$id_club'")->result();
       return $result;
     }
 
@@ -37,5 +37,13 @@
       $result=$this->db->query("SELECT people.name,people.sername,whowhere.rating FROM people,whowhere,section WHERE whowhere.id_people=people.id AND section.id='$id_section' AND whowhere.id_section=section.id ")->result();
       return $result;
     }
+
+    public function add_record($id_user,$id_section)
+    {
+      $this->load->database();
+      $result=$this->db->query("INSERT INTO whowhere(id_people,id_section,rating) VALUES ('$id_user','$id_section',4)")->result();
+      return $result;
+    }
+
   }
   ?>
