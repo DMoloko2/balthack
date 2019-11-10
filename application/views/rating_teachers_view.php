@@ -6,7 +6,7 @@
         <div class="card-body pb-0 my_-_mb25">
           <div class="container list-group-flush">
             <div class="list-group-item">
-              <p class="chool"> <?= $trainers->name.' '.$trainers->sername.' '.$trainers->otch; ?></p>
+              <p class="chool"> <?= $trainers->sername.' '.$trainers->name.' '.$trainers->otch; ?></p>
               <p class="mb-0"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0 mr-3 img_bulding_rating"
             alt="avatar image">Центр : <?= $trainers->club_name; ?><br></p>
               <p class="section_rating">Секция: <?= $trainers->section_name; ?></p>
