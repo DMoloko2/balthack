@@ -6,14 +6,14 @@
 		public function get_club_info1($id_club)
     {
       $this->load->database();
-      $result=$this->db->query("SELECT name,id FROM club")->result();
+      $result=$this->db->query("SELECT name,id FROM club WHERE club.id='$id_club'")->result();
       return $result;
     }
 
     public function get_club_info2($id_club)
     {
       $this->load->database();
-      $result=$this->db->query("SELECT teacher.name,teacher.sername,club.name,section.name,club.address,teacher.rating FROM club,teacher,section WHERE teacher.id_section=section.id AND section.id_club=club.id AND club.id='$id_club'")->result();
+      $result=$this->db->query("SELECT teacher.name,teacher.sername,teacher.otch,club.name AS club_name,section.name AS section name,club.address,teacher.rating FROM club,teacher,section WHERE teacher.id_section=section.id AND section.id_club=club.id AND club.id='$id_club'")->result();
       return $result;
     }
 
