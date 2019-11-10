@@ -85,14 +85,13 @@ class Personal_controllers extends CI_Controller
 			$this->load->model('Igor_model');
 	 		$this->Igor_model->add_record($id);
 		}
-<<<<<<< HEAD
+
 		public function teacher($id) {
 			$this->get_header();
 			$this->load->view('rating_view', $data);
 			$this->load->view('footer_view');
 		}
 
-=======
->>>>>>> 955e48362e24ba57433449e27291b5838186fba0
+
  }
 ?>
