@@ -109,3 +109,18 @@ body{
   left: 115px;
   top: -24px;
 }
+
+
+.rating_star{
+	float: right;
+	position: relative;
+	top: -35px;
+	left: -30px;
+}
+
+.rating_star_int{
+	float: right;
+  position: relative;
+  right: -178px;
+  top: -27px;
+}
