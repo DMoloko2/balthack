@@ -84,10 +84,7 @@ class Personal_controllers extends CI_Controller
 			$this->load->model('Igor_model');
 	 		$this->Igor_model->add_record($id);
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> 37e818a3bad3dcdc62c5ac8b2aba22b304fb0eb2
 		public function teacher($id) {
 			$this->load->model('Igor_model');
 			$data['trainers'] = $this->Igor_model->get_club_info2($id);
@@ -95,9 +92,6 @@ class Personal_controllers extends CI_Controller
 			$this->load->view('teacher_view',$data);
 			$this->load->view('footer_view');
 		}
-<<<<<<< HEAD
 
-=======
->>>>>>> 37e818a3bad3dcdc62c5ac8b2aba22b304fb0eb2
  }
 ?>
