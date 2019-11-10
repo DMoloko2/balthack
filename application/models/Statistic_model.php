@@ -14,7 +14,7 @@
 			public function get_statistic($id_club,$date_mouth,$date_year)
 				{
 					$this->load->database();
-					 $result=$this->db->query("SELECT club.id,club.name,COUNT(visit.id) AS kol FROM visit,club,section WHERE club.id='$id_club' AND visit.id_section=section.id AND section.id_club=club.id AND visit.data BETWEEN '".$date_year."-".$date_mouth.-01" 00:00:00' AND '".$date_year."-".$date_mouth.-30" 00:00:00'")->result();
+					 $result=$this->db->query("SELECT club.id,club.name,COUNT(visit.id) AS kol FROM visit,club,section WHERE club.id='$id_club' AND visit.id_section=section.id AND section.id_club=club.id AND visit.data BETWEEN '".$date_year."-".$date_mouth."-01 00:00:00' AND '".$date_year."-".$date_mouth."-30 00:00:00'")->result();
 					 return $result;
 				}
 
