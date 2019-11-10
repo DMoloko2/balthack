@@ -86,9 +86,12 @@ class Personal_controllers extends CI_Controller
 		}
 
 		public function teacher($id) {
+			$this->load->model('Igor_model');
+			$data['trainers'] = $this->Igor_model->get_club_info2($id);
 			$this->get_header();
-			$this->load->view('rating_view', $data);
+			$this->load->view('teacher_view',$data);
 			$this->load->view('footer_view');
 		}
+
  }
 ?>

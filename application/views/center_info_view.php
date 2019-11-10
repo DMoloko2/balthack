@@ -10,15 +10,15 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
+              <img class="d-block w-100" src="http://kupchinonews.ru/wp-content/uploads/2012/10/dom-molodyozhi-kupchino.jpg"
                 alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg"
+              <img class="d-block w-100" src="http://kupchinonews.ru/wp-content/uploads/2012/10/dom-molodyozhi-kupchino.jpg"
                 alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
+              <img class="d-block w-100" src="http://kupchinonews.ru/wp-content/uploads/2012/10/dom-molodyozhi-kupchino.jpg"
                 alt="Third slide">
             </div>
           </div>
