@@ -40,7 +40,7 @@
     public function show_visit($id_section,$id)
     {
       $this->load->database();
-      $result=$this->db->query("SELECT visit.data FROM visit WHERE id_section='$id_section' AND id_people='$id' ORDER BY visit.data")->result();
+      $result=$this->db->query("SELECT visit.data FROM visit WHERE id_section='$id_section' AND id_people='$id' ORDER BY visit.data DESC") ->result();
       return $result;
     }
   }
