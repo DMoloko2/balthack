@@ -17,6 +17,11 @@
       return $result;
     }
 
-
+    public function get_club_info3($id_club)
+    {
+      $this->load->database();
+      $result=$this->db->query("SELECT section.id,section.name FROM club,section WHERE club.id='$id_club' AND section.id_club=club.id")->result();
+      return $result;
+    }
   }
   ?>
