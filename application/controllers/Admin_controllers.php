@@ -8,6 +8,26 @@ class Admin_controllers extends CI_Controller {
       //показать админ панель
     }
 	}
+
+	function get_header(){
+	 if (isset($_SESSION['first_name'])) {
+		 $data['userData'] = "<a class='nav-link p-0' href='".base_url()."Personal_controllers/personal/".$_SESSION['id']."' >
+										 <span class='mx-2'>" .$_SESSION['first_name']. " ".  $_SESSION['last_name'] . "</span>
+										 <img src='".$_SESSION['photo_big']."' class='rounded-circle z-depth-0'
+											 alt='avatar image' height='50'>
+									 </a>";
+		 $this->load->view('head_view',$data);
+	 }
+	 else {
+		 $data['userData'] =  '							<a class="nav-link p-0" href="http://oauth.vk.com/authorize?client_id=6996347&amp;redirect_uri=http://localhost/balthack/Registration_controllers/&amp;response_type=code">
+										 <span class="mx-2">Войти в личный кабинет</span>
+										 <img src="https://st2.depositphotos.com/8440746/11967/v/950/depositphotos_119670044-stock-illustration-user-icon-man-profile-businessman.jpg" class="rounded-circle z-depth-0"
+											 alt="avatar image" height="50">
+									 </a>';
+									 $this->load->view('head_view',$data);
+	 }
+	}
+
   public function countvisitclub($data_begin='2018-03-08',$data_end = '2019-08-20')
   {
     $this->load->model('Statistic_model');
@@ -98,23 +118,38 @@ class Admin_controllers extends CI_Controller {
     }
     print_r($data);
   }
-  public function getcentername($id)
-  {
-    $this->load->model('Igor_model');
-    $data['name_center'] = $this->Igor_model->get_club_info1($id);
-    $data['trainers'] = $this->Igor_model->get_club_info2($id);
-    $data['section'] = $this->Igor_model->get_club_info3($id);
-    print_r($data);
-  }
-  // private function isadmin()
-  // {
-  //   if ($_SESSION['admin_flag'] == 0) {
-  //   $this->load->view('errors/html/index.html');
-  //   }
-  //   else{
-  //     return true;
-  //   }
-  // }
 
+  public function countvisitsection($id,$data_begin='2018-03-08',$data_end ='2019-08-20')
+  {
+    $this->load->model('Statistic_model');
+    $i = 0;
+    $result = $this->Statistic_model->get_statistic1($id,$data_begin,$data_end);
+    foreach ($result as $value) {
+      $data['name_sections'][$i] = $value;
+      $data['count'][$i] = $value;
+    }
+    print_r($result);
+  }
+
+	public function getcentername($id){
+		$this->load->model('Igor_model');
+		$data['name_center'] = $this->Igor_model->get_club_info1($id);
+		$data['trainers'] = $this->Igor_model->get_club_info2($id);
+		$data['section'] = $this->Igor_model->get_club_info3($id);
+
+		$this->get_header();
+		$this->load->view('center_info_view', $data);
+		$this->load->view('footer_view');
+
+	  // private function isadmin()
+	  // {
+	  //   if ($_SESSION['admin_flag'] == 0) {
+	  //   $this->load->view('errors/html/index.html');
+	  //   }
+	  //   else{
+	  //     return true;
+	  //   }
+	  // }
+	}
 }
 ?>

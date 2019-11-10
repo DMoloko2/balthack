@@ -18,6 +18,13 @@
 					 return $result;
 				}
 
+				public function get_statistic1($id_club,$data_begin,$data_end)
+				{
+					$this->load->database();
+	         $result=$this->db->query("SELECT section.name,COUNT(visit.id) AS kol FROM visit,club,section WHERE visit.id_section=section.id AND section.id_club=club.id AND club.id='$id_club' AND visit.data BETWEEN '".$data_begin." 00:00:00' AND '".$data_end." 00:00:00' GROUP BY section.name  ")->result();
+	         return $result;
+				}
+
   }
 
 ?>

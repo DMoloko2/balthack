@@ -4,7 +4,7 @@
   		<input type="text" class="search-input" placeholder="Введите текст...">
   	</div>
   <?php foreach ($club as $key): ?>
-    <a href="#<?= $key->id; ?>">
+    <a href="<?= base_url(); ?>Admin_controllers/getcentername/<?= $key->id; ?>">
       <div class="card wow fadeInUp">
         <div class="card-body pb-0 my_-_mb25">
           <div class="container list-group-flush">
