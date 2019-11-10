@@ -85,5 +85,11 @@ class Main_controllers extends CI_Controller {
 			echo "Ты лох!";
 		}
 	}
+
+	public function center_info($id_center){
+		$this->get_header();
+		$this->load->view('center_info_view');
+		$this->load->view('footer_view');
+	}
 }
 ?>

@@ -20,7 +20,7 @@ body{
   margin: 0 auto;
 }
 
-.content_img h2, #about_us h4, .card-body-cascade h4{
+.content_img h2, #about_us h4, .card-body-cascade h4, .center_info_div h4, .center_info_div_h4{
   background: rgb(43, 187, 173);
   display: initial;
   font-size: 50px;
@@ -36,7 +36,7 @@ body{
   color: #fff;
 }
 
-#about_us h4, .card-body-cascade h4{
+#about_us h4, .card-body-cascade h4, .center_info_div h4, .center_info_div_h4{
   font-size: 25px;
   margin-bottom: 20px
 }
@@ -70,6 +70,15 @@ body{
 
 .rating a:hover{
 	text-decoration: none;
+}
+
+.center_info_a{
+	color: black;
+}
+
+.center_info_a:hover{
+	text-decoration: none;
+	color: grey;
 }
 
 .img_bulding_rating{
@@ -123,4 +132,34 @@ body{
   position: relative;
   right: -178px;
   top: -27px;
+}
+
+.center_info{
+	margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.my_btn{
+	background-color: #2bbbad!important;
+  border-color: #2bbbad!important;
+	color: #fff;
+	margin-top: -1px;
+}
+
+.my_card_center_info{
+	padding-bottom: 30px;
+}
+
+.my_color_yellow{
+  color: rgb(255, 160, 0);
+}
+
+.my_color_grey{
+	color: grey;
+}
+
+.center_info_position_raiteng{
+	position: relative;
+  right: -200px;
+  top: -24px;
 }
