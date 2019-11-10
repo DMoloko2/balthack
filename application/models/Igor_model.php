@@ -34,7 +34,7 @@
     public function get_club_info5($id_section)
     {
       $this->load->database();
-      $result=$this->db->query("SELECT people.name,people.sername,whowhere.rating FROM people,whowhere,section WHERE whowhere.id_people=people.id AND section.id='$id_section' AND whowhere.id_section=section.id ")->result();
+      $result=$this->db->query("SELECT people.id,people.name,people.sername,whowhere.rating FROM people,whowhere,section WHERE whowhere.id_people=people.id AND section.id='$id_section' AND whowhere.id_section=section.id ")->result();
       return $result;
     }
 

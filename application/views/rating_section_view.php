@@ -6,7 +6,7 @@
   		<input type="text" class="search-input" placeholder="Введите текст...">
   	</div>
   <?php foreach ($section as $section_key): ?>
-    <a href="#<?= $section_key->id; ?>">
+    <a href="<?= base_url();?>Personal_controllers/getstudent/<?= $section_key->id; ?>">
 
       <div class="card wow fadeInUp">
         <div class="card-body pb-0 my_-_mb25">
