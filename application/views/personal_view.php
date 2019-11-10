@@ -31,14 +31,14 @@
   <div class="carousel-inner" role="listbox">
     <!--First slide-->
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://sun9-36.userapi.com/c639631/v639631692/63077/YzYZFXZ0D0M.jpg"
+      <img class="d-block w-100" src="https://ros-obrazovanie.ru/netcat_files/Image/futbol_04.jpg"
         alt="First slide" height="400px">
     </div>
     <!--/First slide-->
 
     <!--Third slide-->
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://sun9-62.userapi.com/c845418/v845418777/a733c/evp5eiKoKdk.jpg"
+      <img class="d-block w-100" src="https://family.by/uploads/posts/2016-12/1480663377_dnjzbmxp1is.jpg"
         alt="Third slide" height="400px">
     </div>
     <!--/Third slide-->
