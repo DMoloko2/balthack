@@ -106,6 +106,24 @@ class Admin_controllers extends CI_Controller {
     $data['section'] = $this->Igor_model->get_club_info3($id);
     print_r($data);
   }
+  public function countvisitsection($id,$data_begin='2018-03-08',$data_end ='2019-08-20')
+  {
+    $this->load->model('Statistic_model');
+    $i = 0;
+    $result = $this->Statistic_model->get_statistic1($id,$data_begin,$data_end);
+    foreach ($result as $value) {
+      $data['name_sections'][$i] = $value;
+      $data['count'][$i] = $value;
+    }
+    print_r($result);
+  }
+  public function getstudent($id)
+  {
+    $this->load->model('Igor_model');
+    $data['name_sections'] = $this->Igor_model->get_club_info4($id);
+    $data['pepolinsection'] = $this->Igor_model->get_club_info5($id);
+    print_r($data);
+  }
   // private function isadmin()
   // {
   //   if ($_SESSION['admin_flag'] == 0) {
