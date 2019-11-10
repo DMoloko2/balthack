@@ -7,25 +7,79 @@
   <title>Личный кабинет</title>
 </head>
 <body>
-  <div class="container">
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <ul class="developer">
-          <h6 class="mb-1">Личный Кабинет</h6>
-          <li><?php print_r($personal[0]->name); ?></li>
-          <li><?php print_r($personal[0]->name); ?></li>
-          <li><?php print_r($personal[0]->sername); ?></li>
-          <li><?php print_r($personal[0]->year); ?></li>
-          <li><textarea id='myTextArea'>
-            <?php print_r($personal[0]->information); ?>
-          </textarea></li>
-          <div id='div'></div>
-          <button class='btn_info'>Изменить информацию</button>
-          <button type="button" class="btn btn-primary" id="button_scan">scan</button>
-          <div id="good">Сканирование завершено</div>
+
+  <div class="container center_info" style="margin-top:60px">
+    <div class="row">
+      <div class="col-sm">
+        <h3>Личный Кабинет</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+
+
+
+        <!--Carousel Wrapper-->
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-1z" data-slide-to="0"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="1"  class="active"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <!--First slide-->
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://sun9-36.userapi.com/c639631/v639631692/63077/YzYZFXZ0D0M.jpg"
+        alt="First slide" height="400px">
+    </div>
+    <!--/First slide-->
+
+    <!--Third slide-->
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://sun9-62.userapi.com/c845418/v845418777/a733c/evp5eiKoKdk.jpg"
+        alt="Third slide" height="400px">
+    </div>
+    <!--/Third slide-->
+  </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+
+
+
+
+      </div>
+      <div class="col-sm">
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <ul class="developer">
+              <h3 class="mb-1">Ваша информация:</h3>
+              <li><b><?php print_r($personal[0]->name);echo " "; print_r($personal[0]->sername); ?></b></li>
+              <li><?php print_r($personal[0]->year); echo " года рождения"?></li>
+              <li><h4 class="mb-1">Расскажите о себе:</h4></li>
+              <textarea id='myTextArea' style="margin-top: 0px;    margin-bottom: 0px;    height: 78px;    border: none;    padding: 10px;    border-radius: 5px;    background-color: #2bbbad!important;    color: #fff;">
+                <?php print_r($personal[0]->information); ?></textarea>
+              <div id='div'></div>
+              <button class='btn btn-primary '>Изменить информацию</button>
+              <button type="button" class="btn btn-danger" id="button_scan">scan</button>
+              <div id="good">Сканирование завершено</div>
+            </ul>
+          </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 
 
