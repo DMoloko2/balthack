@@ -118,8 +118,10 @@ class Admin_controllers extends CI_Controller {
     }
     print_r($data);
   }
-  public function getcentername($id)
+
+  public function countvisitsection($id,$data_begin='2018-03-08',$data_end ='2019-08-20')
   {
+<<<<<<< HEAD
     $this->load->model('Igor_model');
     $data['name_center'] = $this->Igor_model->get_club_info1($id);
     $data['trainers'] = $this->Igor_model->get_club_info2($id);
@@ -128,7 +130,18 @@ class Admin_controllers extends CI_Controller {
 		$this->get_header();
 		$this->load->view('center_info_view', $data);
 		$this->load->view('footer_view');
+=======
+    $this->load->model('Statistic_model');
+    $i = 0;
+    $result = $this->Statistic_model->get_statistic1($id,$data_begin,$data_end);
+    foreach ($result as $value) {
+      $data['name_sections'][$i] = $value;
+      $data['count'][$i] = $value;
+    }
+    print_r($result);
+>>>>>>> 6aeb1f24854f302fa4192584778e4f462435ffa6
   }
+
   // private function isadmin()
   // {
   //   if ($_SESSION['admin_flag'] == 0) {
