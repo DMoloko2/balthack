@@ -40,7 +40,13 @@ $userInfo = json_decode(file_get_contents('https://api.vk.com/method/users.get' 
 	$this->session->set_userdata('first_name', $userInfo['response'][0]['first_name']);
 	$this->session->set_userdata('last_name', $userInfo['response'][0]['last_name']);
 	$this->session->set_userdata('photo_big', $userInfo['response'][0]['photo_big']);
-	redirect(base_url());
+	$this->session->set_userdata('admin_flag', $idUser[0]->admin_flag);
+	if($idUser[0]->admin_flag == 1){
+		redirect(base_url().'Admin_controllers');
+	}
+	else {
+		redirect(base_url());
+	}
     }
 	}
 }
