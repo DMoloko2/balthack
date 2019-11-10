@@ -4,7 +4,7 @@
   		<input type="text" class="search-input" placeholder="Введите текст...">
   	</div>
   <?php foreach ($trainers as $ticher): ?>
-    <a href="#<?= $ticher->id; ?>">
+    <a href="<?= base_url();?>Personal_controllers/teacher/<?= $ticher->id; ?>">
       <div class="card wow fadeInUp">
         <div class="card-body pb-0 my_-_mb25">
           <div class="container list-group-flush">

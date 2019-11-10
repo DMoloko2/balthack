@@ -62,6 +62,11 @@ class Personal_controllers extends CI_Controller
 			$this->load->model('Igor_model');
 	 		$this->Igor_model->add_record($id);
 		}
+		public function teacher($id) {
+			$this->get_header();
+			$this->load->view('rating_view', $data);
+			$this->load->view('footer_view');
+		}
 
  }
 ?>
