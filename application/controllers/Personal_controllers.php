@@ -43,5 +43,6 @@ class Personal_controllers extends CI_Controller
 			$this->load->view('list_visit',$result);
 		}
 
+
  }
 ?>
