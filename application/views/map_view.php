@@ -133,11 +133,9 @@ group.addEventListener('tap', function (evt) {
   //////////////////////////////////////////////////////////////////////////////////////////
   console.log(evt);
       var id_club=evt.target['data'].split("id = ")[1][1];
-      //document.location.href = "http://localhost/balthack/"+id_club;
+      document.location.href = "<?php base_url(); ?>Admin_controllers/getcentername/"+id_club;
 ///////////////////////////////////////////////////////////////////////////////////////////
   }, false);
-
-
 
 
 function switchMapLanguage(map, platform){
