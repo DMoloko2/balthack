@@ -10,7 +10,6 @@ class Admin_controllers extends CI_Controller {
 	}
 
 	function get_header(){
-<<<<<<< HEAD
 	 if (isset($_SESSION['first_name'])) {
 		 $data['userData'] = "<a class='nav-link p-0' href='".base_url()."Personal_controllers/personal/".$_SESSION['id']."' >
 										 <span class='mx-2'>" .$_SESSION['first_name']. " ".  $_SESSION['last_name'] . "</span>
@@ -28,25 +27,6 @@ class Admin_controllers extends CI_Controller {
 									 $this->load->view('head_view',$data);
 	 }
 	}
-=======
-		 if (isset($_SESSION['first_name'])) {
-			 $data['userData'] = "<a class='nav-link p-0' href='".base_url()."Personal_controllers/personal/".$_SESSION['id']."' >
-											 <span class='mx-2'>" .$_SESSION['first_name']. " ".  $_SESSION['last_name'] . "</span>
-											 <img src='".$_SESSION['photo_big']."' class='rounded-circle z-depth-0'
-												 alt='avatar image' height='50'>
-										 </a>";
-			 $this->load->view('head_view',$data);
-		 }
-		 else {
-			 $data['userData'] =  '							<a class="nav-link p-0" href="http://oauth.vk.com/authorize?client_id=6996347&amp;redirect_uri=http://localhost/balthack/Registration_controllers/&amp;response_type=code">
-											 <span class="mx-2">Войти в личный кабинет</span>
-											 <img src="https://st2.depositphotos.com/8440746/11967/v/950/depositphotos_119670044-stock-illustration-user-icon-man-profile-businessman.jpg" class="rounded-circle z-depth-0"
-												 alt="avatar image" height="50">
-										 </a>';
-										 $this->load->view('head_view',$data);
-		 }
- 	}
->>>>>>> 3060df8b9ef85382b53ba235563c520eec5a8bbf
 
   public function countvisitclub($data_begin='2018-03-08',$data_end = '2019-08-20')
   {
