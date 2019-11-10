@@ -1,8 +1,5 @@
 <section class="center_info">
   <div class="container">
-    <?php print_r($name_center); ?>
-    <?php print_r($trainers); ?>
-    <?php print_r($section); ?>
     <div class="row text-center">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -51,15 +48,17 @@
         <div class="mb-3">
           <h4 class="center_info_div_h4">Секции в центре</h4>
         </div>
-        <a href="#" class="center_info_a">
-          <ul class="list-group list-group-flush">
-            <ul class="list-group">
-              <li class="list-group-item">
-                box
-              </li>
+        <?php foreach ($section as $section_key): ?>
+          <a href="#<?php print_r($section_key->id); ?>" class="center_info_a">
+            <ul class="list-group list-group-flush">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <?php print_r($section_key->name); ?>
+                </li>
+              </ul>
             </ul>
-          </ul>
-        </a>
+          </a>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
@@ -83,7 +82,7 @@
       <!--Body-->
       <div class="modal-body p-0">
         <div class="card wow fadeInUp my_card_center_info">
-          <div class="card-body pb-0 my_-_mb25">
+          <div class="card-body pb-0">
             <div class="container list-group-flush">
               <div class="list-group-item my_color_yellow">
                 <?php foreach ($trainers as $trainers_key): ?>
