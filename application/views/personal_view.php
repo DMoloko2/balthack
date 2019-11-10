@@ -35,8 +35,14 @@
      <?= $achiv->description; ?>
     </div>
    <?php endforeach; ?>
+<h1>Куда записан</h1>
 
-
+   <?php foreach ($sections as $sections): ?>
+       <div class='col-lg-3 col-md-4 col-sm-12 btn ttt' id='<?= $sections->id; ?>' >
+        <?= $sections->name; ?> <?= $sections->address; ?>
+       </div>
+      <?php endforeach; ?>
+<div class='rrr'></div>
 
 
    <canvas></canvas>
@@ -97,35 +103,19 @@
 
 
   <script  type="text/javascript" charset="UTF-8" >
-  // $(".btn_info").on('click', function(e){
-  //   //alert(a);
-  //   var text2 = $("#myTextArea").val();
-  //   $.ajax({
-  //     type: "GET",
-  //     url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2,
-  //     contentType: "application/json",
-  //     success: function(e){
-  //       $('#div').html(e);
-  //
-  //   }
-  //
-  // })
-  //
-  //  //  success: location.reload(),
-  //  // dataType: dataType
-  // });
-$(document).ready(function() {
 
-  $(".btn_info").on('click', function(e){
+
+
+  $(".ttt").on('click', function(e){
     //alert(a);
 
-    var text2 = $("#myTextArea").val();
+    var text2 = $(this).attr('id');
     $.ajax({
       type: "GET",
-      url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2+'&id='+<?php echo $_SESSION['id']?>,
+      url: 'http://localhost/balthack/Personal_controllers/showvisit?info='+text2+'&id='+<?php echo $_SESSION['id']?>,
       contentType: "application/json",
       success: function(e){
-        $('#div').html(e);
+        $('.rrr').html(e);
 
     }
 
@@ -134,6 +124,20 @@ $(document).ready(function() {
 
 });
 
+$(".btn").on('click', function(e){
+  //alert(a);
+
+  var text2 = $("#myTextArea").val();
+  $.ajax({
+    type: "GET",
+    url: 'http://localhost/balthack/Personal_controllers/updateinfo?info='+text2+'&id='+<?php echo $_SESSION['id']?>,
+    contentType: "application/json",
+    success: function(e){
+      $('#div').html(e);
+
+  }
+
+});
 
    //  success: location.reload(),
    // dataType: dataType

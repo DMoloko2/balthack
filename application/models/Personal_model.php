@@ -30,5 +30,18 @@
       $this->load->database();
       $this->db->query("INSERT INTO visit(id_people,id_section)VALUES ('$id','$id_section')");
     }
+    public function show_list($id)
+    {
+      $this->load->database();
+      $result=$this->db->query("SELECT section.name,club.address,section.id FROM section,whowhere,club WHERE section.id_club=club.id AND whowhere.id_people='$id' AND whowhere.id_section=section.id")->result();
+      return $result;
+    }
+
+    public function show_visit($id_section,$id)
+    {
+      $this->load->database();
+      $result=$this->db->query("SELECT visit.data FROM visit WHERE id_section='$id_section' AND id_people='$id' ")->result();
+      return $result;
+    }
   }
 ?>
