@@ -42,7 +42,26 @@ class Personal_controllers extends CI_Controller
 			$result['result']=$this->Personal_model->show_visit($id_section,$id);
 			$this->load->view('list_visit',$result);
 		}
-
+		public function getcentername($id)
+		{
+			$this->load->model('Igor_model');
+			$data['name_center'] = $this->Igor_model->get_club_info1($id);
+			$data['trainers'] = $this->Igor_model->get_club_info2($id);
+			$data['section'] = $this->Igor_model->get_club_info3($id);
+			print_r($data);
+		}
+		public function getstudent($id)
+		{
+			$this->load->model('Igor_model');
+			$data['name_sections'] = $this->Igor_model->get_club_info4($id);
+			$data['pepolinsection'] = $this->Igor_model->get_club_info5($id);
+			print_r($data);
+		}
+		public function addrecord($id_user,$id_section)
+		{
+			$this->load->model('Igor_model');
+	 		$this->Igor_model->add_record($id);
+		}
 
  }
 ?>
