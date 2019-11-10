@@ -56,7 +56,10 @@ class Main_controllers extends CI_Controller {
 	{
 		$this->load->model('Trainer_model');
 		$data['trainers'] = $this->Trainer_model->get_trainers();
-		print_r($data);
+
+		$this->get_header();
+		$this->load->view('rating_teachers_view', $data);
+		$this->load->view('footer_view');
 	}
 
 	public function trainersclub($id = 0)

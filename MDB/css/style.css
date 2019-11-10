@@ -103,3 +103,9 @@ body{
   top: 42px;
   left: 115px;
 }
+
+.section_rating{
+	position: relative;
+  left: 115px;
+  top: -24px;
+}

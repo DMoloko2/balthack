@@ -35,7 +35,7 @@
         			<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink">
 			          <a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/club">Молодёжных центров</a>
 			          <a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/sections">Кружков(секций)</a>
-								<a class="dropdown-item" href="#">Преподователей(тренеров)</a>
+								<a class="dropdown-item" href="<?= base_url(); ?>Main_controllers/trainers">Преподователей(тренеров)</a>
         			</div>
       			</li>
     			</ul>
