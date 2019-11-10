@@ -2,7 +2,7 @@
   <h3 class="text-center pb-2">Подростково - молодёжные центры</h3>
   <?php foreach ($club as $club): ?>
     <a href="#<?= $club->id; ?>">
-      <div class="card">
+      <div class="card wow fadeInUp">
         <div class="card-body pb-0 my_-_mb25">
           <div class="container list-group-flush">
             <div class="list-group-item">
