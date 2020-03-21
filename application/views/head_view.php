@@ -20,7 +20,7 @@
 	<body>
 <!--Navbar -->
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color wow fadeIn">
-			<a class="navbar-brand" href="<?= base_url(); ?>">ProgHub</a>
+			<a class="navbar-brand" href="<?= base_url(); ?>">F1</a>
   			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
   			</button>
